@@ -18,7 +18,7 @@ const mapStateToProps = state => ({
 let api1, api2;
 const audio = new Audio(ticSound);
 
-const endGame = () => {
+const pauseGame = () => {
   api1.pause();
   api2.pause();
 };
@@ -58,7 +58,7 @@ const Timers = props => {
       <div className="timer_buttons">
         <button onClick={() => props.setGame(false)}> New game</button>
         <button onClick={() => switchTurn()}>Switch/Break over</button>
-        <button onClick={() => endGame()}> Bathroom break </button>
+        <button onClick={() => pauseGame()}> Bathroom break </button>
       </div>
       <Countdown
         ref={api => (api2 = api)}
