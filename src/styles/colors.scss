@@ -1,0 +1,47 @@
+$color-1: #ffffff;
+$color-2: #000000;
+
+.colors {
+  div {
+    display: inline-block;
+  }
+
+  input[type="radio"] {
+    display: none;
+
+    + label {
+      span {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: -1px 4px 0 0;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 2px solid #000000;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+        line-height: 44px;
+
+        img {
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+
+    &#color-1 + label span {
+      background-color: $color-1;
+    }
+
+    &#color-2 + label span {
+      background-color: $color-2;
+    }
+
+    &:checked + label span img {
+      opacity: 1;
+    }
+  }
+}

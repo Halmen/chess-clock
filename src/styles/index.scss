@@ -1,3 +1,13 @@
+@import "mixins.scss";
+@import "app.scss";
+@import "black_game_over.scss";
+@import "white_game_over.scss";
+@import "black_timer.scss";
+@import "white_timer.scss";
+@import "timer_buttons.scss";
+@import "options.scss";
+@import "colors.scss";
+
 body {
   margin: 0;
   padding: 0;

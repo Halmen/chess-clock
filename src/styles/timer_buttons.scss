@@ -1,0 +1,40 @@
+.timer_buttons {
+  button {
+    background: #5c5d64;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 2.5rem;
+    font-size: 1em;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+  }
+  button:hover {
+    background: #fff;
+    color: #1c1d1d;
+  }
+  button:before,
+  button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #1e1f1e;
+    transition: 400ms ease all;
+  }
+  button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+  button:hover:before,
+  button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+  }
+}

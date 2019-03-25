@@ -1,0 +1,9 @@
+.black_timer {
+  @include timer(white, black, rgb(0, 174, 255));
+  @include loading_bar(
+    white,
+    rgba(165, 165, 165, 0.856),
+    rgb(112, 112, 112),
+    rgb(27, 27, 27)
+  );
+}

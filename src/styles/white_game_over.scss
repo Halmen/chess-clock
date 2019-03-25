@@ -1,0 +1,3 @@
+.white_game_over {
+  @include game_over(black, white);
+}

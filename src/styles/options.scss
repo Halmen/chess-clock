@@ -1,0 +1,72 @@
+.options {
+  border: 1px solid silver;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin: 2rem;
+  -ms-box-orient: vertical;
+
+  .minutes {
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    justify-content: center;
+  }
+
+  &-input {
+    width: 4rem;
+  }
+
+  &-lable {
+    color: white;
+    background: rgb(126, 124, 124);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 1rem;
+    font-family: "Libre Baskerville", serif;
+  }
+
+  .button {
+    background: black;
+    margin: 20px auto;
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  .btnTwo {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    margin-top: -100px;
+    padding-top: 2px;
+    background: white;
+    left: -250px;
+    transition: 0.3s;
+  }
+  .btnText {
+    color: white;
+    transition: 0.3s;
+  }
+  .btnText2 {
+    margin-top: 63px;
+    margin-right: -130px;
+    color: black;
+  }
+  .button:hover .btnTwo {
+    /*When hovering over .button change .btnTwo*/
+    left: -130px;
+  }
+  .button:hover .btnText {
+    /*When hovering over .button change .btnText*/
+    margin-left: 65px;
+  }
+  .button:active {
+    /*Clicked and held*/
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+  }
+}

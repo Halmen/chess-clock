@@ -1,0 +1,111 @@
+@mixin flex-container {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin timer($colour1, $colour2, $colour3) {
+  background: $colour1;
+  .flex-container {
+    @include flex-container;
+    list-style: none;
+    border: 1px solid silver;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .flex-item {
+    font-family: "Share Tech Mono", monospace;
+    background: $colour2;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+
+    text-align: center;
+    text-shadow: 0 0 20px $colour3, 0 0 20px rgba(10, 175, 230, 0);
+    line-height: 100px;
+    color: $colour1;
+    font-weight: bold;
+    font-size: 2em;
+    flex-shrink: 1;
+  }
+
+  .delimiter {
+    text-align: center;
+    padding-top: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    line-height: 100px;
+    color: $colour2;
+    font-weight: bold;
+    font-size: 2em;
+    flex-shrink: 1;
+  }
+}
+
+@mixin loading_bar($colour1, $colour2, $colour3, $colour4) {
+  .load-bar {
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    background-color: $colour1;
+  }
+  .bar {
+    content: "";
+    display: inline;
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    text-align: center;
+  }
+  .bar:nth-child(1) {
+    background-color: $colour2;
+    animation: loading 30s linear infinite;
+  }
+  .bar:nth-child(2) {
+    background-color: $colour3;
+    animation: loading 30s linear 10s infinite;
+  }
+  .bar:nth-child(3) {
+    background-color: $colour4;
+    animation: loading 30s linear 20s infinite;
+  }
+  @keyframes loading {
+    from {
+      left: 50%;
+      width: 0;
+      z-index: 100;
+    }
+    33.3333% {
+      left: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    to {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+@mixin game_over($colour1, $colour2) {
+  @include flex-container;
+  background: $colour1;
+  padding-bottom: 2rem;
+  margin: 1rem;
+
+  h1 {
+    color: $colour1;
+    background: $colour2;
+    font-size: 75px;
+    line-height: 74px;
+    font-weight: 700;
+    font-family: "Libre Baskerville", serif;
+    margin-bottom: 1rem;
+  }
+}
