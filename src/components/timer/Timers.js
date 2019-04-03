@@ -6,6 +6,7 @@ import WhiteTimeComponent from "./WhiteTimeComponent";
 import BlackTimeComponent from "./BlackTimeComponent";
 import ticSound from "../../assets/tick.wav";
 import PropTypes from "prop-types";
+import TimeComponent from "./TimerComponent";
 
 const mapDispatchToProps = dispatch => ({
   setGame: status => dispatch(setGame(status))
@@ -51,9 +52,9 @@ const Timers = props => {
         date={props.date + props.whiteReducer.wtime * 60000}
         intervalDelay={0}
         precision={1}
-        renderer={WhiteTimeComponent}
         onTick={time => playWarning(time)}
         autoStart={props.colorReducer.color === "white"}
+        renderer={props => <TimeComponent {...props} player={"white"} />}
       />
       <div className="timer_buttons">
         <button onClick={() => props.setGame(false)}> New game</button>
@@ -65,9 +66,9 @@ const Timers = props => {
         date={props.date + props.blackReducer.btime * 60000}
         intervalDelay={0}
         precision={1}
-        renderer={BlackTimeComponent}
         onTick={time => playWarning(time)}
         autoStart={props.colorReducer.color === "black"}
+        renderer={props => <TimeComponent {...props} player={"black"} />}
       />
     </div>
   );
