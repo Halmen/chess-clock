@@ -2,19 +2,19 @@ import React from "react";
 
 const Completionist = props => (
   <div className={props.player + "_game_over"}>
-    <h1>You're dead ;)! </h1>
+    <p>You're dead ;)! </p>
   </div>
 );
 
 const TimerElement = props => (
   <div className={props.player + "_timer"}>
-    <ul className="flex-container">
-      <li className="flex-item">{props.minutes}</li>
-      {!props.paused ? <li className="delimiter">:</li> : null}
-      <li className="flex-item">{props.seconds}</li>
-      {!props.paused ? <li className="delimiter">:</li> : null}
-      <li className="flex-item">{props.milliseconds}</li>
-    </ul>
+    <div className="flex-container">
+      <span className="flex-item">{props.minutes}</span>
+      {!props.paused ? <span className="delimiter">:</span> : null}
+      <span className="flex-item">{props.seconds}</span>
+      {!props.paused ? <span className="delimiter">:</span> : null}
+      <span className="flex-item">{props.milliseconds}</span>
+    </div>
     {!props.paused ? (
       <div className="load-bar">
         <div className="bar" />
@@ -42,7 +42,7 @@ const TimeComponent = ({
       minutes={minutes}
       seconds={seconds}
       milliseconds={milliseconds}
-      paused={false}
+      paused={api.isPaused()}
     />
   );
 };

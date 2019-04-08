@@ -2,8 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { setGame } from "../../actions/chessAction";
 import Countdown from "react-countdown-now";
-import WhiteTimeComponent from "./WhiteTimeComponent";
-import BlackTimeComponent from "./BlackTimeComponent";
 import ticSound from "../../assets/tick.wav";
 import PropTypes from "prop-types";
 import TimeComponent from "./TimerComponent";

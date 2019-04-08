@@ -1,9 +1,11 @@
 .white_timer {
   @include timer(black, white, white);
+
   @include loading_bar(
     black,
     rgb(112, 112, 112),
     rgba(165, 165, 165, 0.856),
     white
   );
+  flex-direction: column-reverse;
 }
